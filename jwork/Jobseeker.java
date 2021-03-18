@@ -1,10 +1,10 @@
-
 /**
- * Write a description of class Jobseeker here.
+ * Class Jobseeker
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Bryan Oliver
+ * @version 18.3.2021
  */
+
 public class Jobseeker
 {
     // instance variables - replace the example below with your own
@@ -14,53 +14,115 @@ public class Jobseeker
     private String password;
     private String joinDate;
 
-    /**
-     * Constructor for objects of class Jobseeker
-     */
-    public Jobseeker()
+    
+/**
+ * Class Jobseeker
+ *
+ * inisiasi variabel untuk id, name, email, password, dan joinDate
+ */
+    public Jobseeker(int id, String name, String email, String password, String joinDate)
     {
-        // initialise instance variables
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.password = password;
+        this.joinDate = joinDate;
     }
-
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public static int getId()
+ /**
+ * method getId()
+ * getter untuk memperoleh nilai id
+ * @return id menampilkan objek id
+ */
+    public int getId()
     {
-        return 0;
+        return id;
     }
-    public static String getName()
+/**
+ * method getName()
+ * getter untuk memperoleh nilai name
+ * @return name menampilkan objek name
+ */
+    public String getName()
     {
-        return "oop";
+        return name;
     }
-    public static String getEmail()
+/**
+ * method getEmail()
+ * getter untuk memperoleh nilai email
+ * @return email menampilkan objek email
+ */
+    public String getEmail()
     {
-        return "oop";
+        return email;
     }
-    public static String getPassword()
+/**
+ * method getPassword()
+ * getter untuk memperoleh nilai password
+ * @return password menampilkan objek password
+ */
+    public String getPassword()
     {
-        return "oop";
+        return password;
     }
-     public static String joinDate()
+/**
+ * method getJoinDate()
+ * getter untuk memperoleh nilai joinDate
+ * @return joinDate menampilkan objek joinDate
+ */
+     public String getJoinDate()
     {
-        return "oop";
+        return joinDate;
     }
-    public static void setId(int id)
+/**
+ * method setId()
+ * setter untuk menetapkan nilai id
+ * @param id berisi objek id
+ */
+    public void setId(int id)
     {
+        this.id = id;
     }
-    public static void setName(String Name)
+/**
+ * method setName()
+ * setter untuk menetapkan nilai name
+ * @param name berisi objek name
+ */
+    public void setName(String name)
     {
+        this.name = name;
     }
-    public static void setEmail(String email)
+/**
+ * method setEmail()
+ * setter untuk menetapkan nilai email
+ * @param email berisi objek email
+ */
+    public void setEmail(String email)
     {
+        this.email = email;
     }
-    public static void setPassword(String password)
+/**
+ * method setPassword()
+ * setter untuk menetapkan nilai password
+ * @param password berisi objek password
+ */
+    public void setPassword(String password)
     {
+        this.password = password;
     }
-    public static void setJoinDate(String joinDate)
+/**
+ * method setJoinDate()
+ * setter untuk menetapkan nilai joinDate
+ * @param joinDate berisi objek joinDate
+ */
+    public void setJoinDate(String joinDate)
     {
+        this.joinDate = joinDate;
+    }
+ /**
+ * method printData()
+ * print nilai dari objek name
+ */
+    public void printData() {
+        System.out.println(getName());
     }
 }

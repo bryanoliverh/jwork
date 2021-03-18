@@ -1,0 +1,36 @@
+Class documentation
+<---- javadoc command: ---->
+E:\apps\bluej\jdk\bin\javadoc.exe
+-author
+-version
+-nodeprecated
+-package
+-Xdoclint:none
+-noindex
+-notree
+-nohelp
+-nonavbar
+-source
+11
+-classpath
+E:\apps\bluej\lib\bluejcore.jar;E:\apps\bluej\lib\junit-4.12.jar;E:\apps\bluej\lib\junit-jupiter-5.5.2.jar;E:\apps\bluej\lib\junit-jupiter-api-5.5.2.jar;E:\apps\bluej\lib\junit-jupiter-engine-5.5.2.jar;E:\apps\bluej\lib\junit-jupiter-migrationsupport-5.5.2.jar;E:\apps\bluej\lib\junit-jupiter-params-5.5.2.jar;E:\apps\bluej\lib\junit-platform-commons-1.5.2.jar;E:\apps\bluej\lib\junit-platform-console-1.5.2.jar;E:\apps\bluej\lib\junit-platform-console-standalone-1.5.2.jar;E:\apps\bluej\lib\junit-platform-engine-1.5.2.jar;E:\apps\bluej\lib\junit-platform-launcher-1.5.2.jar;E:\apps\bluej\lib\junit-platform-reporting-1.5.2.jar;E:\apps\bluej\lib\junit-platform-runner-1.5.2.jar;E:\apps\bluej\lib\junit-platform-suite-api-1.5.2.jar;E:\apps\bluej\lib\junit-platform-testkit-1.5.2.jar;E:\apps\bluej\lib\junit-quickcheck-core-0.9.jar;E:\apps\bluej\lib\junit-vintage-engine-5.5.2.jar;E:\apps\bluej\lib\hamcrest-core-1.3.jar;E:\apps\bluej\lib\hamcrest-library-1.3.jar;E:\apps\bluej\lib\lang-stride.jar;E:\apps\bluej\lib\javafx\lib\javafx.base.jar;E:\apps\bluej\lib\javafx\lib\javafx.controls.jar;E:\apps\bluej\lib\javafx\lib\javafx.fxml.jar;E:\apps\bluej\lib\javafx\lib\javafx.graphics.jar;E:\apps\bluej\lib\javafx\lib\javafx.media.jar;E:\apps\bluej\lib\javafx\lib\javafx.properties.jar;E:\apps\bluej\lib\javafx\lib\javafx.swing.jar;E:\apps\bluej\lib\javafx\lib\javafx.web.jar;D:\UI\smt6\OOP\prak oop\oopjavaproject\jwork\jwork
+-d
+D:\UI\smt6\OOP\prak oop\oopjavaproject\jwork\jwork\doc
+-encoding
+UTF-8
+-charset
+UTF-8
+D:\UI\smt6\OOP\prak oop\oopjavaproject\jwork\jwork\DatabaseJob.java
+<---- end of javadoc command ---->
+Loading source file D:\UI\smt6\OOP\prak oop\oopjavaproject\jwork\jwork\DatabaseJob.java...
+Constructing Javadoc information...
+Standard Doclet version 11.0.2
+Building tree for all the packages and classes...
+Generating D:\UI\smt6\OOP\prak oop\oopjavaproject\jwork\jwork\doc\DatabaseJob.html...
+Generating D:\UI\smt6\OOP\prak oop\oopjavaproject\jwork\jwork\doc\package-summary.html...
+Generating D:\UI\smt6\OOP\prak oop\oopjavaproject\jwork\jwork\doc\constant-values.html...
+Building index for all the packages and classes...
+Building index for all classes...
+Generating D:\UI\smt6\OOP\prak oop\oopjavaproject\jwork\jwork\doc\allclasses.html...
+Generating D:\UI\smt6\OOP\prak oop\oopjavaproject\jwork\jwork\doc\allclasses.html...
+Generating D:\UI\smt6\OOP\prak oop\oopjavaproject\jwork\jwork\doc\index.html...

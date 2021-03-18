@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=DatabaseJob
+comment0.text=\r\n\ Class\ DatabaseJob\r\n\r\n\ @author\ Bryan\ Oliver\r\n\ @version\ 18.3.2021\r\n
+comment1.params=
+comment1.target=DatabaseJob()
+comment1.text=\r\n\ public\ DatabaseJob()\r\n\ membuat\ listjob\ dengan\ array\ size\ 50\r\n
+comment2.params=listJob
+comment2.target=DatabaseJob(java.lang.String[])
+comment2.text=\r\n\ public\ DatabaseJob()\r\n\ @param\ listJob\ berisi\ objek\ listJob\r\n
+comment3.params=job
+comment3.target=boolean\ addJob(Job)
+comment3.text=\r\n\ public\ addJob()\r\n\ @param\ job\ berisi\ objek\ job\r\n\ @return\ false\ (secara\ sementara\ untuk\ boolean)\r\n
+comment4.params=job
+comment4.target=boolean\ removeJob(Job)
+comment4.text=\r\n\ public\ removeJob()\r\n\ @param\ job\ berisi\ objek\ job\r\n\ @return\ false\ (secara\ sementara\ untuk\ boolean)\r\n
+comment5.params=
+comment5.target=Job\ getJob()
+comment5.text=\r\n\ public\ getJob()\r\n\ @return\ null\ (secara\ sementara\ untuk\ boolean)\r\n
+comment6.params=
+comment6.target=java.lang.String[]\ getListJob()
+comment6.text=\r\n\ public\ getListJob()\r\n\ @return\ listjob\ sesuai\ array\ objek\ listjob\r\n
+numComments=7

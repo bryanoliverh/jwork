@@ -1,64 +1,131 @@
 
 /**
- * Write a description of class Job here.
+ * Class Job
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Bryan Oliver
+ * @version 18.3.2021
  */
 public class Job
 {
-    // instance variables - replace the example below with your own
+    // instance variables Job
     private int id;
     private String name;
     private int fee;
     private String category;
-
-    /**
-     * Constructor for objects of class Job
-     */
-    public Job()
+    private Recruiter recruiter;
+    
+/**
+ * Class Job
+ *
+ * inisiasi variabel untuk id, name, recruiter, fee, dan category
+ */
+    public Job(int id, String name, Recruiter recruiter, int fee, String category)
     {
+        this.id = id;
+        this.recruiter = recruiter;
+        this.name = name;
+        this.fee = fee;
+        this.category = category;
         // initialise instance variables
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public static int getId()
+  /**
+ * method getId()
+ * getter untuk memperoleh nilai id
+ * @return id menampilkan objek id
+ */
+    public int getId()
     {
-        return 0;
+        return id;
     }
-    public static String getName()
+/**
+ * method getName()
+ * getter untuk memperoleh nilai name
+ * @return name menampilkan objek name
+ */
+    public String getName()
     {
-        return "oop";
+        return name;
     }
-    public static int getFee()
+/**
+ * method getFee()
+ * getter untuk memperoleh nilai Fee
+ * @return Fee menampilkan objek Fee
+ */
+    public int getFee()
     {
-        return 0;
+        return fee;
     }
-    public static String getCategory()
+/**
+ * method getCategory()
+ * getter untuk memperoleh nilai category
+ * @return category menampilkan objek category
+ */
+    public String getCategory()
     {
-        return "oop";
+        return category;
     }
-    public static void setId(int id)
+/**
+ * method getRecruiter()
+ * getter untuk memperoleh nilai recruiter
+ * @return recruiter menampilkan objek recruiter
+ */
+    public Recruiter getRecruiter()
     {
-       
+        return recruiter;
     }
-    public static void setName(String name)
+/**
+ * method setId()
+ * setter untuk menetapkan nilai id
+ * @param id berisi objek id
+ */
+    public void setId(int id)
     {
-       
+       this.id = id;
     }
-    public static void setFee(int fee)
+/**
+ * method setName()
+ * setter untuk menetapkan nilai name
+ * @param name berisi objek name
+ */
+    public void setName(String name)
     {
-       
+       this.name = name;
     }
-    public static void setCategory(String category)
+/**
+ * method setRecruiter()
+ * setter untuk menetapkan nilai recruiter
+ * @param recruiter berisi objek recruiter
+ */
+    public void setRecruiter(Recruiter recruiter)
+    {
+       this.recruiter = recruiter;
+    }
+/**
+ * method setFee()
+ * setter untuk menetapkan nilai Fee
+ * @param Fee berisi objek Fee
+ */
+    public void setFee(int fee)
+    {
+        this.fee = fee;
+    }
+/**
+ * method setCategory()
+ * setter untuk menetapkan nilai category
+ * @param category berisi objek category
+ */
+    public void setCategory(String category)
+    {
+        this.category = category;
+    }
+/**
+ * method printData()
+ * print nilai dari objek name
+ */
+    public void printData()
     {
         
     }
-    
     
 }

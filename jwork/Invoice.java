@@ -1,60 +1,116 @@
 
 /**
- * Write a description of class Invoice here.
+ * Class Invoice
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Bryan Oliver
+ * @version 18.3.2021
  */
 public class Invoice
 {
-    // instance variables - replace the example below with your own
+    // instance variables untuk Invoice
     private int id;
     private int idJob;
     private String date;
     private int totalFee;
+    private Jobseeker jobseeker;
 
-    /**
-     * Constructor for objects of class Invoice
-     */
-    public Invoice(){
-
+ /**
+ * Class Jobseeker
+ *
+ * inisiasi variabel untuk id, idJob, date, totalFee, jobseeker
+ */
+    public Invoice(int id, int idJob, String date, int totalFee, Jobseeker jobseeker){
+        this.id = id;
+        this.idJob = idJob;
+        this.date = date;
+        this.totalFee = totalFee;
+        this.jobseeker = jobseeker;
     }
-
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public static int getId(){
-        return 0;
+ /**
+ * method getId()
+ * getter untuk memperoleh nilai id
+ * @return id menampilkan objek id
+ */
+    public int getId(){
+        return id;
     }
-    
-    public static int getIdJob(){
-        return 0;
+ /**
+ * method getIdJob()
+ * getter untuk memperoleh nilai idJob
+ * @return idJob menampilkan objek idJov
+ */
+    public int getIdJob(){
+        return idJob;
     }
-    
-    public static String getDate(){
-        return "oop";
+/**
+ * method getDate()
+ * getter untuk memperoleh nilai date
+ * @return date menampilkan objek date
+ */
+    public String getDate(){
+        return date;
     }
-    
-    public static int getTotalFee(){
-        return 0;
+/**
+ * method getTotalFee()
+ * getter untuk memperoleh nilai totalFee
+ * @return totalFee menampilkan objek totalFee
+ */
+    public int getTotalFee(){
+        return totalFee;
     }
-    
-    public static void setId(int id){
-        
+/**
+ * method setId()
+ * setter untuk menetapkan nilai id
+ * @param id berisi objek id
+ */   
+    public void setId(int id){
+        this.id = id;
     }
-    
-    public static void setIdJobs(int idJobs){
-    
+/**
+ * method setIdJobs()
+ * setter untuk menetapkan nilai idJobs
+ * @param idJobs berisi objek idJobs
+ */  
+    public void setIdJobs(int idJobs){
+        this.idJob = idJobs;
     }
-    
-    public static String setDate(String date){
-        return "";
+/**
+ * method setDate()
+ * setter untuk menetapkan nilai date
+ * @param date berisi objek date
+ */
+    public void setDate(String date){
+        this.date = date;
     }
+/**
+ * method setTotalFee()
+ * setter untuk menetapkan nilai totalFee
+ * @param totalFee berisi objek totalFee
+ */
+    public void setTotalFee(int totalFee){
+        this.totalFee = totalFee;
+    }
+/**
+ * method getJobseeker()
+ * getter untuk memperoleh nilai jobseeker
+ * @return jobseeker menampilkan objek jobseeker
+ */
+    public Jobseeker getJobseeker() {
+        return jobseeker;
+    }
+/**
+ * method setJobseeker()
+ * setter untuk menetapkan nilai jobseeker
+ * @param jobseeker berisi objek jobseeker
+ */
+    public void setJobseeker(Jobseeker jobseeker) {
+        this.jobseeker = jobseeker;
+    }
+/**
+    * method printData()
+ * print nilai dari objek name
+ */   
+    public void printData(){
     
-    public static String setTotalFee(int totalFee){
-        return "";
     }
 }

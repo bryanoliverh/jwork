@@ -1,61 +1,127 @@
-
 /**
- * Write a description of class Recruiter here.
+ * Class Recruiter
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Bryan Oliver
+ * @version 18.3.2021
  */
+
 public class Recruiter
 {
-    // instance variables - replace the example below with your own
+    // instance variabel untuk recruiter
     private int id;
     private String name;
     private String email;
-    private String password;
-    private String joinDate;
-
-    /**
-     * Constructor for objects of class Recruiter
-     */
-    public Recruiter()
+    private String phoneNumber;
+    private Location location;
+/**
+ * Class Recruiter
+ *
+ * inisiasi variabel untuk id, name, email, phoneNumber, dan location
+ */
+    public Recruiter(int id, String name, String email, String phoneNumber, Location location )
     {
-        // initialise instance variables
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.location = location;
     }
-
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public static int getId()
+/**
+ * method getId()
+ * getter untuk memperoleh nilai id
+ * @return id menampilkan objek id
+ */
+    public int getId()
     {
-        return 0;
+        return id;
     }
-    
-        public static String getName()
+/**
+ * method getName()
+ * getter untuk memperoleh nilai name
+ * @return name menampilkan objek name
+ */
+    public String getName()
     {
-        return "oop";
-    }    
-    public static String getEmail()
+        return name;
+    }  
+/**
+ * method getEmail()
+ * getter untuk memperoleh nilai email
+ * @return email menampilkan objek email
+ */
+    public String getEmail()
     {
-        return "oop";
+        return email;
     }
-     public static String getPhoneNumber()
+/**
+ * method getPhoneNumber()
+ * getter untuk memperoleh nilai phoneNumber
+ * @return phoneNumber menampilkan objek phoneNumber
+ */
+     public String getPhoneNumber()
     {
-        return "oop";
+        return phoneNumber;
     }
-    public static void setId(int id)
+/**
+ * method getLocation()
+ * getter untuk memperoleh nilai location
+ * @return phoneNumber menampilkan objek location
+ */   
+    public Location getLocation()
     {
+        return location;
     }
-    public static void setEmail(String Email)
+/**
+ * method setId()
+ * setter untuk menetapkan nilai id
+ * @param id berisi objek id
+ */
+    public void setId(int id)
     {
+        this.id = id;
     }
-    public static void setName(String Name)
+/**
+ * method setEmail()
+ * setter untuk menetapkan nilai email
+ * @param email berisi objek email
+ */
+    public void setEmail(String email)
     {
+        this.email = email;
     }
-    public static void setPhoneNumber(String phoneNumber)
+/**
+ * method setName()
+ * setter untuk menetapkan nilai name
+ * @param name berisi objek name
+ */
+    public void setName(String name)
     {
+        this.name = name;
     }
-
+/**
+ * method setPhoneNumber()
+ * setter untuk menetapkan nilai phoneNumber
+ * @param phoneNumber berisi objek phoneNumber
+ */
+    public void setPhoneNumber(String phoneNumber)
+    {
+        this.phoneNumber = phoneNumber;
+    }
+/**
+ * method setLocation()
+ * setter untuk menetapkan nilai location
+ * @param location berisi objek location
+ */
+    public void setLocation(Location location)
+    {
+        this.location = location;
+    }
+/**
+ * method printData()
+ * print nilai dari objek name
+ */
+    public void printData() {
+        System.out.println(getName());
+    }
 }
+
