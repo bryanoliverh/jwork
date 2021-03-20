@@ -9,10 +9,11 @@ public class DatabaseJob {
     private String[] listJob;
 /**
  * public DatabaseJob()
- * membuat listjob dengan array size 50
+ * membuat fungsi DatabaseJob dengan mode public (isi dikosongkan)
  */
     public DatabaseJob(){
-       listJob = new String[50];
+       
+       
     }
 /**
  * public DatabaseJob()

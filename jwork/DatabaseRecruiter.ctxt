@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=DatabaseRecruiter
+comment0.text=\r\n\ Class\ DatabaseRecruiter\r\n\r\n\ @author\ Bryan\ Oliver\r\n\ @version\ 20.3.2021\r\n
+comment1.params=
+comment1.target=DatabaseRecruiter()
+comment1.text=\r\n\ public\ DatabaseRecruiter()\r\n\ membuat\ fungsi\ DatabaseRecruiter\ dengan\ mode\ public\ (isi\ dikosongkan)\r\n
+comment2.params=listRecruiter
+comment2.target=DatabaseRecruiter(java.lang.String[])
+comment2.text=\r\n\ public\ DatabaseRecruiter()\r\n\ @param\ listJob\ berisi\ objek\ listJob\r\n
+comment3.params=recruiter
+comment3.target=boolean\ addRecruiter(Recruiter)
+comment3.text=\r\n\ public\ addRecruiter()\r\n\ @param\ recruiter\ berisi\ objek\ recruiter\r\n\ @return\ false\ (secara\ sementara\ untuk\ boolean)\r\n
+comment4.params=recruiter
+comment4.target=boolean\ removeRecruiter(Recruiter)
+comment4.text=\r\n\ public\ removeRecruiter()\r\n\ @param\ recruiter\ berisi\ objek\ recruiter\r\n\ @return\ false\ (secara\ sementara\ untuk\ boolean)\r\n
+comment5.params=
+comment5.target=Recruiter\ getRecruiter()
+comment5.text=\r\n\ public\ getRecruiter()\r\n\ @return\ null\ (secara\ sementara\ untuk\ boolean)\r\n
+comment6.params=
+comment6.target=java.lang.String[]\ getListRecruiter()
+comment6.text=\r\n\ public\ getListRecruiter()\r\n\ @return\ listRecruiter\ sesuai\ array\ objek\ listRecruiter\r\n
+numComments=7

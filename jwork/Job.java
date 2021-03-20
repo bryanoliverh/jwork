@@ -123,9 +123,8 @@ public class Job
  * method printData()
  * print nilai dari objek name
  */
-    public void printData()
-    {
-        
+     public void printData() {
+        System.out.println(getName());
     }
     
 }

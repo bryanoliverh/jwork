@@ -108,9 +108,9 @@ public class Invoice
     }
 /**
     * method printData()
- * print nilai dari objek name
+ * print nilai dari objek totalFee
  */   
-    public void printData(){
-    
+     public void printData() {
+        System.out.println(getTotalFee());
     }
 }

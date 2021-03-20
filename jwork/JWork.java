@@ -28,5 +28,10 @@ public class JWork
         Job jobnew = new Job(1, "Bryan Oliver", recruiternew, 200000, "Tech Support");
         Jobseeker jobseekernew = new Jobseeker(1, "Oliver H", "bryanoliverh@ui.ac.id", "secretsecret", "18 Maret 2021");
         Invoice invoicenew = new Invoice(1, 1, "18 Maret 2021", 200000, jobseekernew);
+       
+        System.out.println(recruiternew.getName());
+        recruiternew.setName("Ilham");
+        System.out.println(recruiternew.getName());
+        jobnew.printData();
     }
 }
