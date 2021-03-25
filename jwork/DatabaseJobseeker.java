@@ -1,35 +1,36 @@
 /**
- * Class DatabaseRecruiter
+ * Class DatabaseJobseeker
  *
  * @author Bryan Oliver
  * @version 25.3.2021
  */
 //class DatabaseJob
-public class DatabaseRecruiter
+public class DatabaseJobseeker
 {
-private static String[] listRecruiter;
+    private static String[] listJobseeker;
 /**
  * public addRecruiter()
  * @param recruiter berisi objek recruiter
  * @return false (secara sementara untuk boolean)
  */
-    public static boolean addRecruiter(Recruiter recruiter){
+ public static boolean addJobSeeker(Jobseeker jobseeker)
+    {
         return false;
     }
-    
     /**
  * public removeRecruiter()
  * @param recruiter berisi objek recruiter
  * @return false (secara sementara untuk boolean)
  */
-    public static boolean removeRecruiter(Recruiter recruiter){
+       public static boolean removeJobSeeker(Jobseeker jobseeker)
+    {
         return false;
     }
 /**
  * public getRecruiter()
  * @return null (secara sementara untuk boolean)
  */
-    public static Recruiter getRecruiter(){
+    public static Recruiter getJobSeeker(){
         return null;
     }
     
@@ -37,7 +38,7 @@ private static String[] listRecruiter;
  * public getListRecruiter()
  * @return listRecruiter sesuai array objek listRecruiter
  */
-    public static String[] getListRecruiter(){
-        return listRecruiter;
+    public static String[] getListJobSeeker(){
+        return listJobseeker;
     }
 }

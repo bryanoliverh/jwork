@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=JobCategory
+comment0.text=\r\n\ Enum\ JobCategory\r\n\r\n\ @author\ Bryan\ Oliver\r\n\ @version\ 25.3.2021\r\n
+comment1.params=category
+comment1.target=JobCategory(java.lang.String)
+comment2.params=
+comment2.target=java.lang.String\ toString()
+comment3.params=args
+comment3.target=void\ main(java.lang.String[])
+comment3.text=\r\n\ \ public\ static\ void\ main(String[]\ args)\ \r\nFungsi\ Main\ untuk\ membentuk\ berbagai\ kategori\ untuk\ job\r\n
+numComments=4

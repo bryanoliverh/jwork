@@ -1,35 +1,34 @@
-
 /**
  * Class Job
  *
  * @author Bryan Oliver
- * @version 18.3.2021
+ * @version 25.3.2021
  */
 public class Job
 {
-    // instance variables Job
+    // instance variables dari class Job
     private int id;
     private String name;
     private int fee;
-    private String category;
     private Recruiter recruiter;
+    private JobCategory category;
+    
     
 /**
  * Class Job
  *
  * inisiasi variabel untuk id, name, recruiter, fee, dan category
+ * 
  */
-    public Job(int id, String name, Recruiter recruiter, int fee, String category)
+    public Job(int id, String name, Recruiter recruiter, int fee, JobCategory category)
     {
         this.id = id;
         this.recruiter = recruiter;
         this.name = name;
         this.fee = fee;
         this.category = category;
-        // initialise instance variables
     }
-
-  /**
+/**
  * method getId()
  * getter untuk memperoleh nilai id
  * @return id menampilkan objek id
@@ -61,7 +60,7 @@ public class Job
  * getter untuk memperoleh nilai category
  * @return category menampilkan objek category
  */
-    public String getCategory()
+    public JobCategory getCategory()
     {
         return category;
     }
@@ -115,7 +114,7 @@ public class Job
  * setter untuk menetapkan nilai category
  * @param category berisi objek category
  */
-    public void setCategory(String category)
+    public void setCategory(JobCategory category)
     {
         this.category = category;
     }
@@ -123,8 +122,14 @@ public class Job
  * method printData()
  * print nilai dari objek name
  */
-     public void printData() {
-        System.out.println(getName());
+    public void printData()
+    {
+        System.out.println("===================== JOB =====================");
+        System.out.println("ID: " + id);
+        System.out.println("Name: " + name);
+        System.out.println("Recruiter: " + recruiter.getName());
+        System.out.println("City: " + recruiter.getLocation().getCity());
+        System.out.println("Fee: " + fee);
+        System.out.println("Category: " + category);
     }
-    
 }
