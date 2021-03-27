@@ -26,5 +26,9 @@ public class JWork
         Recruiter recruiternew = new Recruiter(1, " Bryan Oliver ", " bryanoliverh@gmail.com ", " 087878383294 ", locationnew);
         Job jobnew = new Job(1, " Management ", recruiternew, 200000, JobCategory.FrontEnd);
         jobnew.printData();
+        Jobseeker newjobseeker = new Jobseeker(99, "bryan", "bryanoliverh@gmail.com", "secret", "27/3/2021");
+        Invoice newinvoice = new Invoice(123, jobnew.getId(), "27/3/2021", jobnew.getFee(), newjobseeker, PaymentType.BankPayment, InvoiceStatus.OnGoing);
+
+        newinvoice.printData();
     }
 }

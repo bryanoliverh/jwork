@@ -3,7 +3,7 @@
  * Class Invoice
  *
  * @author Bryan Oliver
- * @version 18.3.2021
+ * @version 27.3.2021
  */
 public class Invoice
 {
@@ -13,18 +13,22 @@ public class Invoice
     private String date;
     private int totalFee;
     private Jobseeker jobseeker;
+    private PaymentType paymentType;
+    private InvoiceStatus status;
 
  /**
  * Class Jobseeker
  *
  * inisiasi variabel untuk id, idJob, date, totalFee, jobseeker
  */
-    public Invoice(int id, int idJob, String date, int totalFee, Jobseeker jobseeker){
+    public Invoice(int id, int idJob, String date, int totalFee, Jobseeker jobseeker, int totalPrice, InvoiceStatus status){
         this.id = id;
         this.idJob = idJob;
         this.date = date;
         this.totalFee = totalFee;
         this.jobseeker = jobseeker;
+        this.paymentType = paymentType;
+        this.status = status;
     }
  /**
  * method getId()
@@ -59,6 +63,30 @@ public class Invoice
         return totalFee;
     }
 /**
+ * method getJobseeker()
+ * getter untuk memperoleh nilai jobseeker
+ * @return jobseeker menampilkan objek jobseeker
+ */
+    public Jobseeker getJobseeker() {
+        return jobseeker;
+    }
+/**
+ * method getPaymentType()
+ * getter untuk memperoleh nilai PaymentType
+ * @return PaymentType menampilkan objek PaymentType
+ */    
+public PaymentType getPaymentType() {
+        return paymentType;
+    }
+/**
+ * method getInvoiceStatus()
+ * getter untuk memperoleh nilai InvoiceStatus
+ * @return InvoiceStatus menampilkan objek InvoiceStatus
+ */    
+public InvoiceStatus getInvoiceStatus() {
+        return status;
+    }
+/**
  * method setId()
  * setter untuk menetapkan nilai id
  * @param id berisi objek id
@@ -90,14 +118,7 @@ public class Invoice
     public void setTotalFee(int totalFee){
         this.totalFee = totalFee;
     }
-/**
- * method getJobseeker()
- * getter untuk memperoleh nilai jobseeker
- * @return jobseeker menampilkan objek jobseeker
- */
-    public Jobseeker getJobseeker() {
-        return jobseeker;
-    }
+
 /**
  * method setJobseeker()
  * setter untuk menetapkan nilai jobseeker
@@ -107,10 +128,33 @@ public class Invoice
         this.jobseeker = jobseeker;
     }
 /**
+ * method setPaymentType()
+ * setter untuk menetapkan nilai paymentType
+ * @param paymentType berisi objek paymentType
+ */
+    public void setPaymentType(PaymentType paymentType) {
+        this.paymentType = paymentType;
+    }
+/**
+ * method setInvoiceStatus()
+ * setter untuk menetapkan nilai status
+ * @param status berisi objek status
+ */
+    public void setInvoiceStatus(InvoiceStatus status) {
+        this.status = status;
+    }
+/**
     * method printData()
  * print nilai dari objek totalFee
  */   
-     public void printData() {
-        System.out.println(getTotalFee());
+public void printData()
+    {
+        System.out.println("===================== Invoice =====================");
+        System.out.println("ID: " + id);
+        System.out.println("ID Job: " + idJob);
+        System.out.println("Date: " + date);
+        System.out.println("Seeker: " + jobseeker.getName());
+        System.out.println("Fee: " + totalFee);
+        System.out.println("Status: " + status);
     }
 }
