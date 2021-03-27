@@ -21,7 +21,7 @@ public class Invoice
  *
  * inisiasi variabel untuk id, idJob, date, totalFee, jobseeker
  */
-    public Invoice(int id, int idJob, String date, int totalFee, Jobseeker jobseeker, int totalPrice, InvoiceStatus status){
+    public Invoice(int id, int idJob, String date, int totalFee, Jobseeker jobseeker, PaymentType paymentType, InvoiceStatus status){
         this.id = id;
         this.idJob = idJob;
         this.date = date;
