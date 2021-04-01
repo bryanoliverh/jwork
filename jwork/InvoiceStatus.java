@@ -6,13 +6,14 @@
  */
 public enum InvoiceStatus {
     OnGoing("On Going"),
-    Finished("Finished");
+    Finished("Finished"),
+    Cancelled("Cancelled");
+    
     
     private String status;
     private InvoiceStatus(String status) {
         this.status = status;
     }
-    @Override
     public String toString(){
         return this.status;
     }
