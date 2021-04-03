@@ -27,16 +27,14 @@ public class JWork
         Job jobnew = new Job(1, " Management ", recruiternew, 200000, JobCategory.FrontEnd);
         
         Jobseeker newjobseeker = new Jobseeker(99, "bryan", "bryanoliverh@gmail.com", "secret", "27/3/2021");
-        
-        Bonus secondbon = new Bonus (1, "HEMATBRYANKEREN", 120000,100000, true);
-        Bonus firstbon = new Bonus (2, "HEMATOliverKEREN", 100000,500000, true);
-        
-   
-        EwalletPayment invoicenew1 = new EwalletPayment(1, jobnew, "1 April 2021", newjobseeker,InvoiceStatus.OnGoing);
-        EwalletPayment invoicenew2 = new EwalletPayment(2, jobnew, "1 April 2021",newjobseeker,InvoiceStatus.OnGoing, firstbon);
-        EwalletPayment invoicenew3 = new EwalletPayment(3, jobnew, "1 April 2021",newjobseeker,InvoiceStatus.Finished, secondbon);
-        invoicenew1.printData();
-        invoicenew2.printData();
-        invoicenew3.printData();
+                
+        BankPayment bank1 = new BankPayment(1, jobnew, "3/4/2020", newjobseeker, InvoiceStatus.OnGoing);
+
+        BankPayment bank2 = new BankPayment(2, jobnew, "3/4/2020", newjobseeker, InvoiceStatus.Finished, 10000);
+
+        bank1.printData();
+        bank2.printData();
+
+      
     }
 }
