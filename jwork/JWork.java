@@ -28,7 +28,7 @@ public class JWork
         
         Jobseeker newjobseeker = new Jobseeker(99, "bryan", "bryanoliverh@gmail.com", "secret", "27/3/2021");
                 
-        BankPayment bank1 = new BankPayment(1, jobnew, "3/4/2020", newjobseeker, InvoiceStatus.OnGoing);
+        BankPayment bank1 = new BankPayment(1, jobnew, "3/4/2020", newjobseeker, InvoiceStatus.Finished);
 
         BankPayment bank2 = new BankPayment(2, jobnew, "3/4/2020", newjobseeker, InvoiceStatus.Finished, 10000);
 
