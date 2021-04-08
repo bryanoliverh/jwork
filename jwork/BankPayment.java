@@ -49,7 +49,7 @@ public class BankPayment extends Invoice {
         System.out.println("ID: " + getId());
         System.out.println("Job: " + getJob().getName());
         System.out.println("Date: " + getDate());
-        System.out.println("Job Seeker: " + getJobseeker().getName());
+        System.out.println("Jobseeker: " + getJobseeker().getName());
         System.out.println("Admin Fee: " + adminFee);
         setTotalFee();
         System.out.println("Total Fee: " + getTotalFee());

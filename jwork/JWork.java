@@ -1,3 +1,5 @@
+import java.util.GregorianCalendar;
+
 /**
  * Class JWork
  *
@@ -26,14 +28,19 @@ public class JWork
         Recruiter recruiternew = new Recruiter(1, " Bryan Oliver ", " bryanoliverh@gmail.com ", " 087878383294 ", locationnew);
         Job jobnew = new Job(1, " Management ", recruiternew, 200000, JobCategory.FrontEnd);
         
-        Jobseeker newjobseeker = new Jobseeker(99, "bryan", "bryanoliverh@gmail.com", "secret", "27/3/2021");
-                
-        BankPayment bank1 = new BankPayment(1, jobnew, "3/4/2020", newjobseeker, InvoiceStatus.Finished);
+        Jobseeker newjobseeker = new Jobseeker(99, "Bryan", "bryan.oliver@ui.ac.id", "sec123Ret1", new GregorianCalendar(2021,04,18));
+        Jobseeker newjobseekersec = new Jobseeker(99, "Bryan", "bryanoliver@ui.ac.id", "10BrySno",  2021, 04, 18); 
+        Jobseeker newjobseekerthir = new Jobseeker(99, "Bryan", "ol123iver@ui.ac.id", "123bRyan0"); 
+        System.out.println(newjobseeker.toString());
+        System.out.println(newjobseekersec.toString());
+        System.out.println(newjobseekerthir.toString());
+        //BankPayment bank1 = new BankPayment(1, jobnew, "3/4/2020", newjobseeker, InvoiceStatus.Finished);
 
-        BankPayment bank2 = new BankPayment(2, jobnew, "3/4/2020", newjobseeker, InvoiceStatus.Finished, 10000);
+        //BankPayment bank2 = new BankPayment(2, jobnew, "3/4/2020", newjobseeker, InvoiceStatus.Finished, 10000);
 
-        bank1.printData();
-        bank2.printData();
+        //bank1.printData();
+        //bank2.printData();
+       
 
       
     }

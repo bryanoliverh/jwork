@@ -120,8 +120,10 @@ public class Recruiter
  * method printData()
  * print nilai dari objek name
  */
-    public void printData() {
-        System.out.println(getName());
+    @Override
+    public String toString() {
+        return "Id = " + getId() + "\nNama = " + getName() + "\nEmail = " + getEmail() + "\nPhone Number = "
+                + getPhoneNumber() + "\nLocation = " + getLocation();
     }
 }
 
