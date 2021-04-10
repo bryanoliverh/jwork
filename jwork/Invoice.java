@@ -1,16 +1,19 @@
+import java.util.Calendar;
+import java.text.SimpleDateFormat;
+import java.util.GregorianCalendar;
 
 /**
  * Class Invoice
  *
  * @author Bryan Oliver
- * @version 01.4.2021
+ * @version 10.4.2021
  */
 public abstract class Invoice
 {
     // instance variables untuk Invoice
     private int id;
     private Job job;
-    private String date;
+    private Calendar date;
     protected int totalFee;
     private Jobseeker jobseeker;
     private InvoiceStatus invoiceStatus;
@@ -23,12 +26,12 @@ public abstract class Invoice
      * @param totalFee menunjukan pada total dari fee
      * @param jobseeker menunjukan pada jobseeker
  */
-    public Invoice(int id, Job job, String date, Jobseeker jobseeker, InvoiceStatus invoiceStatus){
+    public Invoice(int id, Job job, Jobseeker jobseeker, InvoiceStatus invoiceStatus){
         this.id = id;
         this.job = job;
-        this.date = date;
         this.jobseeker = jobseeker;
         this.invoiceStatus = invoiceStatus;
+        this.date = Calendar.getInstance();
     }
     
  /**
@@ -52,7 +55,7 @@ public abstract class Invoice
  * getter untuk memperoleh nilai date
  * @return date menampilkan objek date
  */
-    public String getDate(){
+    public Calendar getDate(){
         return date;
     }
 /**
@@ -106,8 +109,12 @@ public InvoiceStatus getInvoiceStatus() {
  * setter untuk menetapkan nilai date
  * @param date berisi objek date
  */
-    public void setDate(String date){
-        this.date = date;
+    public void setDate(Calendar date){
+        this.date = Calendar.getInstance();
+    }
+ public void setDate(int year, int month, int dayOfMonth)
+    {
+        this.date = new GregorianCalendar(year, month-1, dayOfMonth);
     }
 /**
  * method setTotalFee()
@@ -132,8 +139,18 @@ public InvoiceStatus getInvoiceStatus() {
         this.invoiceStatus = invoiceStatus;
     }
 /**
-    * method printData() dengan abstract
- * 
- */   
-     public abstract void printData();
+ * method toString()
+ * print nilai dari objek name
+ */
+@Override
+   
+    public String toString() {
+    if (this.date == null) {
+            return "Id = " + getId() + "\nJob = " + getJob() + "\nJobseeker = " + getJobseeker() + "\nInvoice Status= "+ getInvoiceStatus();
+        } else {
+            SimpleDateFormat formattedDate = new SimpleDateFormat("dd-MMMM-yyyy");
+            String date = formattedDate.format(getDate().getTime());
+            return "Id = " + getId() + "\nJob = " + getJob() + "\nJobseeker = " + getJobseeker() + "\nInvoice Status= "+ getInvoiceStatus();
+        }    
     }
+}
