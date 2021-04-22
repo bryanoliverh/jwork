@@ -3,40 +3,74 @@
  * Class Invoice
  *
  * @author Bryan Oliver
- * @version 01.4.2021
+ * @version 22.4.2021
  */
+import java.util.ArrayList;
+
 public class DatabaseBonus {
-    private static String[] listBonus;
- /**
- * method addBonus()
- * method untuk melakukan addBonus dengan tipe boolean
- * @return false
- */
+    private static ArrayList<Bonus> BONUS_DATABASE = new ArrayList<Bonus>();
+    private static int lastId = 0;
+
+    public static ArrayList<Bonus> getBonusDatabase(){
+        return BONUS_DATABASE;
+    }
+    public static int getLastId(){
+        return lastId;
+    }
+    public static Bonus getBonusById(int id){
+        Bonus x = null;
+        for (Bonus bonus : BONUS_DATABASE) {
+            if (id == bonus.getId()) {
+                x = bonus;
+            }
+        }
+        return x;
+    }
+
+    public static Bonus getBonusByRefferalCode(String refferalCode){
+        Bonus x = null;
+        for (Bonus bonus : BONUS_DATABASE) {
+            if (refferalCode.equals(bonus.getReferralCode())) {
+                x = bonus;
+            }
+        }
+        return x;
+    }
+
     public static boolean addBonus(Bonus bonus){
+        BONUS_DATABASE.add(bonus);
+        lastId = bonus.getId();
+        return true;
+    }
+
+    public static boolean activateBonus(int id){
+        boolean x = false;
+        for (Bonus bonus : BONUS_DATABASE) {
+            if (id == bonus.getId()) {
+                bonus.setActive(true);
+                x = true;
+            }
+        }
+        return x;
+    }
+
+    public static boolean deactivateBonus(int id){
+        boolean x = false;
+        for (Bonus bonus : BONUS_DATABASE) {
+            if (id == bonus.getId()) {
+                bonus.setActive(false);
+                x = true;
+            }
+        }
+        return x;
+    }
+    public static boolean removeBonus(int id){
+        for (Bonus bonus : BONUS_DATABASE) {
+            if (bonus.getId() == id) {
+                BONUS_DATABASE.remove(bonus);
+                return true;
+            }
+        }
         return false;
-    }
- /**
- * method removeBonus()
- * method untuk melakukan removeBonus dengan tipe boolean
- * @return false
- */
-    public static boolean removeBonus(Bonus bonus){
-        return false;
-    }
- /**
- * method getBonus()
- * method getter untuk melakukan getBonus dengan tipe boolean
- * @return null
- */
-    public static Bonus getBonus(){
-        return null;
-    }
- /**
- * method getListBonus()
- * method getter untuk melakukan getListBonus
- * @return listBonus
- */
-    public static String[] getListBonus(){
-        return listBonus;
     }
 }
