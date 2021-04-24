@@ -20,11 +20,6 @@ public class DatabaseJob {
         return false;
     }
 
-    /**
-     * fungsi untuk mengembalikan job
-     *
-     * @return    null
-     */
     public static ArrayList<Job> getJobDatabase(){
         return JOB_DATABASE;
     }

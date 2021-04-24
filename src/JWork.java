@@ -21,16 +21,19 @@ public class JWork
      */
     public static void main(String[] args)
     {   Location locationnew = new Location("South California", "Los Angeles", "Oracle Arena");
-        DatabaseRecruiter.addRecruiter(new Recruiter(DatabaseRecruiter.getLastId() + 1, " Bryan Oliver ", " bryanoliverh@gmail.com ", " 012321232123 ", locationnew));
+        DatabaseBonus.addBonus(new Bonus(1,"BryanKeren", 10000, 100000,false));
+        DatabaseBonus.addBonus(new Bonus(1,"BryanKeren", 20000, 200000,true));
+        System.out.println(DatabaseBonus.getBonusDatabase());
+
+        DatabaseRecruiter.addRecruiter(new Recruiter(DatabaseRecruiter.getLastId() + 1, " Bryan ", " bryanoliverh@gmail.com ", " 012321232123 ", locationnew));
         DatabaseJobseeker.addJobseeker(new Jobseeker(DatabaseJobseeker.getLastId() + 1, "Bryan", "bryan.oliver@ui.ac.id", "sec123Ret1", 2021, 04, 22));
         DatabaseJobseeker.addJobseeker(new Jobseeker(DatabaseJobseeker.getLastId() + 1, "Bryan", "bryan.oliver@ui.ac.id", "sec123Ret1", 2021, 04 ,22));
         DatabaseJobseeker.addJobseeker(new Jobseeker(DatabaseJobseeker.getLastId() +  1, "Ilham", "Ilham@ui.ac.id", "sec123Ret1", 2021, 04, 22));
-        DatabaseJob.addJob(new Job(1, "GCP Administrator", DatabaseRecruiter.getRecruiterById(2), 10000, JobCategory.BackEnd));
-        DatabaseJob.addJob(new Job(2, "GCP Administrator", DatabaseRecruiter.getRecruiterById(2), 15000, JobCategory.BackEnd));
-        DatabaseJob.addJob(new Job(3, "UI/UX Designer", DatabaseRecruiter.getRecruiterById(2), 20000, JobCategory.FrontEnd));
-
-
         System.out.println(DatabaseJobseeker.getDatabaseJobseeker());
+        DatabaseJob.addJob(new Job(DatabaseJob.getLastId() + 1, "Database Admin", DatabaseRecruiter.getRecruiterById(1), 10000, JobCategory.FrontEnd));
+        DatabaseJob.addJob(new Job(DatabaseJob.getLastId() + 1, "Database Admin", DatabaseRecruiter.getRecruiterById(1), 20000, JobCategory.FrontEnd));
+        DatabaseJob.addJob(new Job(DatabaseJob.getLastId() + 1, "UI.UX", DatabaseRecruiter.getRecruiterById(1), 15000, JobCategory.Devops));
+        System.out.println(DatabaseJob.getJobByCategory(JobCategory.FrontEnd));
         System.out.println(DatabaseJob.getJobByCategory(JobCategory.FrontEnd));
 
 

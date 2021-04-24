@@ -133,6 +133,7 @@ public void setJobs(ArrayList<Job> jobs){
     public void setJobseeker(Jobseeker jobseeker) {
         this.jobseeker = jobseeker;
     }
+
 /**
  * method setInvoiceStatus()
  * setter untuk menetapkan nilai status
