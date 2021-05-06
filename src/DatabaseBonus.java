@@ -17,30 +17,33 @@ public class DatabaseBonus {
     public static int getLastId(){
         return lastId;
     }
-    public static Bonus getBonusById(int id){
-        Bonus x = null;
+    public static Bonus getBonusById(int id) throws BonusNotFoundException {
+        Bonus temp = null;
+
         for (Bonus bonus : BONUS_DATABASE) {
             if (id == bonus.getId()) {
-                x = bonus;
+                temp = bonus;
+                return temp;
             }
         }
-        return x;
+        throw new BonusNotFoundException(id);
     }
-
     public static Bonus getBonusByRefferalCode(String refferalCode){
-        Bonus x = null;
+        Bonus status = null;
+
         for (Bonus bonus : BONUS_DATABASE) {
             if (refferalCode.equals(bonus.getReferralCode())) {
-                x = bonus;
+                status = bonus;
             }
         }
-        return x;
+        return status;
     }
 
-    public static boolean addBonus(Bonus bonus) {
+
+    public static boolean addBonus(Bonus bonus) throws ReferralCodeAlreadyExistsException {
         for (Bonus element : BONUS_DATABASE) {
-            if (bonus.getReferralCode() == element.getReferralCode()) {
-                return false;
+            if (element.getReferralCode() == bonus.getReferralCode()) {
+                throw new ReferralCodeAlreadyExistsException(bonus);
             }
         }
         BONUS_DATABASE.add(bonus);
@@ -69,13 +72,13 @@ public class DatabaseBonus {
         }
         return x;
     }
-    public static boolean removeBonus(int id){
+    public static boolean removeBonus(int id) throws BonusNotFoundException {
         for (Bonus bonus : BONUS_DATABASE) {
             if (bonus.getId() == id) {
                 BONUS_DATABASE.remove(bonus);
                 return true;
             }
         }
-        return false;
+        throw new BonusNotFoundException(id);
     }
 }

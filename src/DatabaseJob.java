@@ -4,20 +4,26 @@ public class DatabaseJob {
     // instance variable dari DatabaseJob
     private static ArrayList<Job> JOB_DATABASE =  new ArrayList<Job>();
     private static int lastId = 0;
-             public static boolean addJob(Job job){
+    public static boolean addJob(Job job) {
         JOB_DATABASE.add(job);
         lastId = job.getId();
         return true;
     }
 
-    public static boolean remove(Job job){
-        for (Job jobb : JOB_DATABASE) {
-            if (job.getId() == jobb.getId()) {
-                JOB_DATABASE.remove(job);
-                return true;
+    public static boolean removeJob(int id) throws JobNotFoundException {
+        boolean status = false;
+        for (Job element : JOB_DATABASE) {
+            if (element.getId() == id) {
+                JOB_DATABASE.remove(element);
+                status = true;
+                break;
             }
         }
-        return false;
+        if (!status){
+            throw new JobNotFoundException(id);
+        }
+
+        return status;
     }
 
     public static ArrayList<Job> getJobDatabase(){
@@ -28,13 +34,15 @@ public class DatabaseJob {
         return lastId;
     }
 
-    public static Job getJobById(int id){
+    public static Job getJobById(int id) throws JobNotFoundException {
         Job x = null;
-        for (Job job : JOB_DATABASE) {
+        try{for (Job job : JOB_DATABASE) {
             if (id == job.getId()) {
                 x = job;
             }
-        }
+        }}
+        catch (Exception e){
+            throw new JobNotFoundException(id);}
         return x;
     }
 
