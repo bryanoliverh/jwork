@@ -19,14 +19,20 @@ public class DatabaseInvoice {
     public static int getLastId(){
         return lastId;
     }
-    public static Invoice getInvoiceById(int id){
-        Invoice x = null;
+    public static Invoice getInvoiceById(int id) throws InvoiceNotFoundException {
+        Invoice result = null;
         for (Invoice invoice : INVOICE_DATABASE) {
             if (id == invoice.getId()) {
-                x = invoice;
+                result = invoice;
+            } else {
+                result = null;
             }
         }
-        return x;
+        if (result == null){
+            throw new InvoiceNotFoundException(id);
+        }
+
+        return result;
     }
     public static ArrayList<Invoice> getJobByJobseeker(int jobseekerid) {
         ArrayList<Invoice> temp = new ArrayList<Invoice>();
@@ -37,11 +43,10 @@ public class DatabaseInvoice {
         }
         return temp;
     }
-    public static boolean addInvoice(Invoice invoice)
-    {
+    public static boolean addInvoice(Invoice invoice) throws OnGoingInvoiceAlreadyExistException{
         for (Invoice invoicee : INVOICE_DATABASE) {
             if (invoicee.getInvoiceStatus() == InvoiceStatus.OnGoing) {
-                return false;
+                throw new OnGoingInvoiceAlreadyExistException(invoice);
             }
         }
         INVOICE_DATABASE.add(invoice);
@@ -58,13 +63,14 @@ public class DatabaseInvoice {
         }
         return false;
     }
-    public static boolean removeInvoice(int id){
+    public static boolean removeInvoice(int id) throws InvoiceNotFoundException{
         for (Invoice invoice : INVOICE_DATABASE) {
             if (invoice.getId() == id) {
                 INVOICE_DATABASE.remove(invoice);
                 return true;
             }
         }
-        return false;
+        throw new InvoiceNotFoundException(id);
     }
+
 }

@@ -7,21 +7,17 @@ import java.util.GregorianCalendar;
  * @author Bryan Oliver
  * @version 22.4.2021
  */
-public class JWork
-{
+
     // instance variables - replace the example below with your own
     /**
      * Constructor for objects of class JWork
      */
-    public JWork()
-    {
-    }
 
-    /**
-     * An example of a method - replace this comment with your own
-     */
-    public static void main(String[] args)
-    {
+    public class JWork extends Thread {
+        public static void main(String[] args) {
+            JWork thread = new JWork();
+            thread.start();
+
         Location locationnew = new Location("South California", "Los Angeles", "Oracle Arena");
 
         DatabaseRecruiter.addRecruiter(new Recruiter(DatabaseRecruiter.getLastId() + 1, "Bryan", "BryanOliver@gmail.com", "12345677", locationnew));
@@ -77,25 +73,32 @@ public class JWork
         } catch (RecruiterNotFoundException e) {
             e.printStackTrace();
         }
+//invoice
 
         try {
-            DatabaseInvoice.addInvoice(new EwalletPayment(10, newJob, DatabaseJobseeker.getJobseekerById(1)));
-        } catch (JobSeekerNotFoundException e) {
-            e.printStackTrace();
+            DatabaseInvoice.addInvoice(new EwalletPayment(1, newJob, DatabaseJobseeker.getJobseekerById(1)));
+        } catch (JobSeekerNotFoundException | OnGoingInvoiceAlreadyExistException e) {
+            System.out.println(e.getMessage());
         }
 
         try {
-            DatabaseInvoice.addInvoice(new EwalletPayment(11, newJob1, DatabaseJobseeker.getJobseekerById(2)));
-        } catch (JobSeekerNotFoundException e) {
-            e.printStackTrace();
+            DatabaseInvoice.addInvoice(new EwalletPayment(2, newJob1, DatabaseJobseeker.getJobseekerById(2)));
+        } catch (JobSeekerNotFoundException | OnGoingInvoiceAlreadyExistException e) {
+            System.out.println(e.getMessage());
         }
-
-        try {
-            DatabaseInvoice.addInvoice(new EwalletPayment(12, newJob1, DatabaseJobseeker.getJobseekerById(2)));
-        } catch (JobSeekerNotFoundException e) {
-            e.printStackTrace();
+        for (Invoice invoice : DatabaseInvoice.getInvoiceDatabase()){
+            new Thread(new FeeCalculator(invoice)).start();
         }
-        //error exception
+//
+//        try {
+//            DatabaseInvoice.addInvoice(new EwalletPayment(3, newJob1, DatabaseJobseeker.getJobseekerById(3)));
+//        } catch (JobSeekerNotFoundException e) {
+//            System.out.println(e.getMessage());
+//        }
+//        for (Invoice invoice : DatabaseInvoice.getInvoiceDatabase()){
+//            new Thread(new FeeCalculator(invoice)).start();
+//        }
+//error exception
         try {
             DatabaseJobseeker.removeJobseeker(10);
         } catch (JobSeekerNotFoundException e) {
@@ -116,16 +119,27 @@ public class JWork
         } catch (BonusNotFoundException bonusNotFound) {
             System.out.println(bonusNotFound.getMessage());
         }
-//thread
-        for (Invoice invoice : DatabaseInvoice.getInvoiceDatabase()){
-            new Thread(new FeeCalculator(invoice)).start();
+        try {
+            DatabaseInvoice.removeInvoice(10);
+        } catch (InvoiceNotFoundException e) {
+            System.out.println(e.getMessage());
         }
+        try {
+            DatabaseInvoice.getInvoiceById(10);
+        } catch (InvoiceNotFoundException InvoiceNotFound) {
+            System.out.println(InvoiceNotFound.getMessage());
+        }
+
+//thread
+
 
 
         System.out.println("\n=====================Jobseeker Database====================\n");
         System.out.println(DatabaseJobseeker.getDatabaseJobseeker());
         System.out.println("\n=====================Bonus Database====================\n");
         System.out.println(DatabaseBonus.getBonusDatabase());
+//        System.out.println("\n=====================Invoice Database====================\n");
+//        System.out.println(DatabaseInvoice.getInvoiceDatabase());
 
 
 //Location locationnew = new Location("South California", "Los Angeles", "Oracle Arena");

@@ -11,19 +11,13 @@ public class DatabaseJob {
     }
 
     public static boolean removeJob(int id) throws JobNotFoundException {
-        boolean status = false;
-        for (Job element : JOB_DATABASE) {
-            if (element.getId() == id) {
-                JOB_DATABASE.remove(element);
-                status = true;
-                break;
+        for (Job job : JOB_DATABASE) {
+            if (job.getId() == id) {
+                JOB_DATABASE.remove(job);
+                return true;
             }
         }
-        if (!status){
-            throw new JobNotFoundException(id);
-        }
-
-        return status;
+        throw new JobNotFoundException(id);
     }
 
     public static ArrayList<Job> getJobDatabase(){
@@ -45,6 +39,7 @@ public class DatabaseJob {
             throw new JobNotFoundException(id);}
         return x;
     }
+
 
     public static ArrayList<Job> getJobByRecruiter(int recruiterId){
         ArrayList<Job> temp = new ArrayList<Job>();
