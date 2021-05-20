@@ -28,7 +28,7 @@ public class DatabaseBonus {
         }
         throw new BonusNotFoundException(id);
     }
-    public static Bonus getBonusByRefferalCode(String refferalCode){
+    public static Bonus getBonusByRefferralCode(String refferalCode){
         Bonus status = null;
 
         for (Bonus bonus : BONUS_DATABASE) {
