@@ -44,6 +44,15 @@ public class DatabaseInvoice {
         }
         return temp;
     }
+    public static ArrayList<Invoice> getInvoiceByJobseeker(int jobseekerid){
+        ArrayList<Invoice> temp = new ArrayList<Invoice>();
+        for (int i = 0; i < INVOICE_DATABASE.size(); i++) {
+            if (jobseekerid == INVOICE_DATABASE.get(i).getJobseeker().getId()) {
+                temp.add(INVOICE_DATABASE.get(i));
+            }
+        }
+        return temp;
+    }
     public static boolean addInvoice(Invoice invoice) throws OnGoingInvoiceAlreadyExistException{
         for (Invoice invoicee : INVOICE_DATABASE) {
             if (invoicee.getInvoiceStatus() == InvoiceStatus.OnGoing) {
@@ -73,5 +82,6 @@ public class DatabaseInvoice {
         }
         throw new InvoiceNotFoundException(id);
     }
+
 
 }
