@@ -17,11 +17,22 @@ public class EwalletPayment extends Invoice {
         super(id, jobs, jobseeker);
     }
 
+    /**
+     * Constructor of ewallet payment
+     * @param id
+     * @param jobs
+     * @param jobseeker
+     * @param bonus
+     */
     public EwalletPayment(int id, ArrayList<Job> jobs, Jobseeker jobseeker, Bonus bonus) {
         super(id, jobs, jobseeker);
         this.setBonus(bonus);
     }
 
+    /**
+     * Getter for payment type
+     * @return PAYMENT_TYPE
+     */
     @Override
     public PaymentType getPaymentType() {
         return PAYMENT_TYPE;
@@ -35,6 +46,9 @@ public class EwalletPayment extends Invoice {
         this.bonus = bonus;
     }
 
+    /**
+     * Setter for total fee
+     */
     @Override
     public void setTotalFee() {
         ArrayList<Job> jobs = getJobs();
@@ -48,6 +62,10 @@ public class EwalletPayment extends Invoice {
         }
     }
 
+    /**
+     * toString function
+     * @return
+     */
     @Override
     public String toString() {
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MMMM-yyyy");

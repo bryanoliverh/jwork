@@ -3,10 +3,11 @@ package bryanoliver.jwork;
  * Class Location
  *
  * @author Bryan Oliver
- * @version 18 Maret 2021
+ * @version 12-6-2021
  */
 public class Location
 {
+    private  int id;
     private String province;
     private String city;
     private String description;
@@ -15,11 +16,30 @@ public class Location
  *
  * inisiasi variabel province, city, dan description
  */
-    public Location(String province, String city, String description)
+    public Location(int id, String province, String city, String description)
     {
+        this.id = id;
         this.province = province;
         this.city = city;
         this.description = description;
+    }
+    /**
+     * method getId()
+     * getter untuk memperoleh nilai id
+     * @return id menampilkan objek id
+     */
+    public int getId()
+    {
+        return id;
+    }
+    /**
+     * method setId()
+     * setter untuk memperoleh nilai id
+     * @@param id
+     */
+    public void setId(int id)
+    {
+        this.id = id;
     }
  /**
  * method getProvince()
@@ -81,6 +101,6 @@ public class Location
  */
  @Override
     public String toString() {
-        return "Province = " + getProvince() + "\nCity = " + getCity() + "\nDescription = " + getDescription();
+        return "Id = " + getId() + "\nProvince = " + getProvince() + "\nCity = " + getCity() + "\nDescription = " + getDescription();
     }
 }

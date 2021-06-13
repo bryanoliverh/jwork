@@ -2,13 +2,11 @@ package bryanoliver.jwork;
 import java.util.ArrayList;
 
 /**
-   * Class JWork
+   * Class Database Invoice
    *
    * @author Bryan Oliver
-   * @version 22.4.2021
+   * @version 10.6.2021
    */
-
-
 
 public class DatabaseInvoice {
     private static ArrayList<Invoice> INVOICE_DATABASE = new ArrayList<Invoice>();
@@ -17,45 +15,54 @@ public class DatabaseInvoice {
     public static ArrayList<Invoice> getInvoiceDatabase(){
         return INVOICE_DATABASE;
     }
+
     public static int getLastId(){
         return lastId;
     }
-    public static Invoice getInvoiceById(int id) throws InvoiceNotFoundException {
-        Invoice result = null;
+
+    /**
+     * getter for invoice by id
+     * @param id
+     * @return
+     * @throws InvoiceNotFoundException
+     */
+    public static Invoice getInvoiceById(int id) throws InvoiceNotFoundException{
+        Invoice x = null;
         for (Invoice invoice : INVOICE_DATABASE) {
             if (id == invoice.getId()) {
-                result = invoice;
-            } else {
-                result = null;
+                x = invoice;
+                return x;
             }
         }
-        if (result == null){
-            throw new InvoiceNotFoundException(id);
-        }
+        throw new InvoiceNotFoundException(id);
+    }
 
-        return result;
-    }
-    public static ArrayList<Invoice> getJobByJobseeker(int jobseekerid) {
-        ArrayList<Invoice> temp = new ArrayList<Invoice>();
-        for (int i = 0; i < INVOICE_DATABASE.size(); i++) {
-            if (jobseekerid == INVOICE_DATABASE.get(i).getJobseeker().getId()) {
-                temp.add(INVOICE_DATABASE.get(i));
-            }
-        }
-        return temp;
-    }
+    /**
+     * getter invoice by jobseeker
+     * @param jobseekerid
+     * @return
+     */
     public static ArrayList<Invoice> getInvoiceByJobseeker(int jobseekerid){
         ArrayList<Invoice> temp = new ArrayList<Invoice>();
-        for (int i = 0; i < INVOICE_DATABASE.size(); i++) {
-            if (jobseekerid == INVOICE_DATABASE.get(i).getJobseeker().getId()) {
-                temp.add(INVOICE_DATABASE.get(i));
+        for (Invoice invoice : INVOICE_DATABASE) {
+            if (jobseekerid == invoice.getJobseeker().getId()) {
+                temp.add(invoice);
+            } else {
+                return null;
             }
         }
         return temp;
     }
+
+    /**
+     * add invoice function
+     * @param invoice
+     * @return
+     * @throws OnGoingInvoiceAlreadyExistException
+     */
     public static boolean addInvoice(Invoice invoice) throws OnGoingInvoiceAlreadyExistException{
         for (Invoice invoicee : INVOICE_DATABASE) {
-            if (invoicee.getInvoiceStatus() == InvoiceStatus.OnGoing) {
+            if (invoicee.getInvoiceStatus() == InvoiceStatus.OnGoing | invoicee.getId() == invoice.getId()) {
                 throw new OnGoingInvoiceAlreadyExistException(invoice);
             }
         }
@@ -63,16 +70,29 @@ public class DatabaseInvoice {
         lastId = invoice.getId();
         return true;
     }
-    public static boolean changeInvoiceStatus(int id, InvoiceStatus invoiceStatus)
-    {
+
+    /**
+     * change invoice status function
+     * @param id
+     * @param invoiceStatus
+     * @return
+     */
+    public static boolean changeInvoiceStatus(int id, InvoiceStatus invoiceStatus){
         for (Invoice invoice : INVOICE_DATABASE) {
-            if (id == invoice.getId() && invoice.getInvoiceStatus() == InvoiceStatus.OnGoing) {
+            if (invoice.getInvoiceStatus() == InvoiceStatus.OnGoing) {
                 invoice.setInvoiceStatus(invoiceStatus);
                 return true;
             }
         }
         return false;
     }
+
+    /**
+     * Removing Invoice by Id
+     * @param id
+     * @return
+     * @throws InvoiceNotFoundException
+     */
     public static boolean removeInvoice(int id) throws InvoiceNotFoundException{
         for (Invoice invoice : INVOICE_DATABASE) {
             if (invoice.getId() == id) {
@@ -82,6 +102,4 @@ public class DatabaseInvoice {
         }
         throw new InvoiceNotFoundException(id);
     }
-
-
 }

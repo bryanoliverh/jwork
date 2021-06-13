@@ -14,9 +14,21 @@ public class DatabaseBonus {
     public static ArrayList<Bonus> getBonusDatabase(){
         return BONUS_DATABASE;
     }
+
+    /**
+     * Getter for last id
+     * @return LastId
+     */
     public static int getLastId(){
         return lastId;
     }
+
+    /**
+     * Getter bonus by ID
+     * @param id
+     * @return
+     * @throws BonusNotFoundException
+     */
     public static Bonus getBonusById(int id) throws BonusNotFoundException {
         Bonus temp = null;
 
@@ -28,6 +40,12 @@ public class DatabaseBonus {
         }
         throw new BonusNotFoundException(id);
     }
+
+    /**
+     * Getter for bonus by refferral Code
+     * @param refferalCode
+     * @return
+     */
     public static Bonus getBonusByRefferralCode(String refferalCode){
         Bonus status = null;
 
@@ -39,7 +57,12 @@ public class DatabaseBonus {
         return status;
     }
 
-
+    /**
+     * Add Bonus
+     * @param bonus
+     * @return
+     * @throws ReferralCodeAlreadyExistsException
+     */
     public static boolean addBonus(Bonus bonus) throws ReferralCodeAlreadyExistsException {
         for (Bonus element : BONUS_DATABASE) {
             if (element.getReferralCode() == bonus.getReferralCode()) {
@@ -51,6 +74,11 @@ public class DatabaseBonus {
         return true;
     }
 
+    /**
+     * Activate bonus
+     * @param id
+     * @return
+     */
     public static boolean activateBonus(int id){
         boolean x = false;
         for (Bonus bonus : BONUS_DATABASE) {
@@ -62,6 +90,11 @@ public class DatabaseBonus {
         return x;
     }
 
+    /**
+     * Deactivate Bonus
+     * @param id
+     * @return
+     */
     public static boolean deactivateBonus(int id){
         boolean x = false;
         for (Bonus bonus : BONUS_DATABASE) {

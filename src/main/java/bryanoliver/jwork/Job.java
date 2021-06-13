@@ -123,9 +123,9 @@ public class Job
  * method printData()
  * print nilai dari objek name
  */
-    @Override
-    public String toString() {
-        return "Id = " + getId() + "\nName = " + getName() + "\nRecruiter = " + getRecruiter() + "\nCity= "+ getRecruiter().getLocation().getCity() + "\nFee = " + getFee() + "\nCategory = " + getCategory();
-
-    }
+@Override
+public String toString() {
+    return "Id = " + getId() + "\nName = " + getName() + "\nRecruiter = " + getRecruiter() + "\nCity= "
+            + getRecruiter().getLocation().getCity() + "\nFee = " + getFee() + "\nCategory = " + getCategory();
+}
 }

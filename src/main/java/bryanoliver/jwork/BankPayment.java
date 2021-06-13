@@ -13,6 +13,13 @@ public class BankPayment extends Invoice{
     private static final PaymentType PAYMENT_TYPE = PaymentType.BankPayment;
     private int adminFee;
 
+    /**
+     * constructor bankpayment
+     * @param id
+     * @param jobs
+     * @param jobseeker
+     */
+
     public BankPayment(int id, ArrayList<Job> jobs,  Jobseeker jobseeker){
         super(id, jobs, jobseeker);
     }
@@ -32,16 +39,36 @@ public class BankPayment extends Invoice{
         }
     }
 
+    /**
+     * getpaymenttype function to get the payment type (bank or ewallet)
+     * @return PAYMENT_TYPE
+     */
     @Override
     public PaymentType getPaymentType() {
         return PAYMENT_TYPE;
     }
+
+    /**
+     *getAdminFee
+     * @return adminFee
+     */
     public int getAdminFee() {
         return adminFee;
     }
+
+    /**
+     *setter for admin fee
+     * @param adminFee
+     */
+
     public void setAdminFee(int adminFee) {
         this.adminFee = adminFee;
     }
+
+    /**
+     * toString function to give the necessary objects
+     * @return res
+     */
     @Override
     public String toString() {
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MMMM-yyyy");

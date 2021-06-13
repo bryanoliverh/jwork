@@ -25,7 +25,7 @@ public class Jobseeker
  * Class Jobseeker
  *constructor
  * inisiasi variabel untuk id, name, email, password, dan joinDate
-  * @param id      untuk inisiasi id
+  * @param id  untuk inisiasi id
      * @param name   untuk inisiasi name jobseeker
      * @param email  untuk inisiasi email
      * @param password untuk inisiasi password
@@ -184,15 +184,16 @@ public void setJoinDate(int year, int month, int dayOfMonth)
  * method toString()
  * print nilai dari objek name
  */
-@Override
-   
-    public String toString() {
-    if (this.joinDate == null) {
-            return "Id = " + getId() + "\nName = " + getName() + "\nEmail = " + getEmail() + "\nPassword = "+ getPassword();
-        } else {
-            SimpleDateFormat formattedDate = new SimpleDateFormat("dd-MMMM-yyyy");
-            String date = formattedDate.format(getJoinDate().getTime());
-            return "Id = " + getId() + "\nName = " + getName() + "\nEmail = " + getEmail() + "\nPassword = "+ getPassword() + "\nJoin Date = " + date;
-        }    
-    }
+ @Override
+ public String toString() {
+     if (this.joinDate == null) {
+         return "Id = " + getId() + "\nNama = " + getName() + "\nEmail = " + getEmail() + "\nPassword = "
+                 + getPassword();
+     } else {
+         SimpleDateFormat formattedDate = new SimpleDateFormat("dd-MMMM-yyyy");
+         String date = formattedDate.format(getJoinDate().getTime());
+         return "Id = " + getId() + "\nNama = " + getName() + "\nEmail = " + getEmail() + "\nPassword = "
+                 + getPassword() + "\nJoin Date = " + date;
+     }
+ }
 }
