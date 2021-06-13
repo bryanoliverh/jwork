@@ -110,7 +110,7 @@ public class DatabaseRecruiterPostgreLocid {
      * Method for remove recruiter using recruiter id
      * @param id id of recruiter
      */
-    public void removeCustomer(int id){
+    public void removeRecruiter(int id){
         Connection c = connection();
         PreparedStatement stmt;
         try {
